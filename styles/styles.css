@@ -144,7 +144,6 @@ h1{
 
 @media (min-width: 700px){
   .rating-modal{
-    /* padding-inline: 2rem; */
     border-radius: 30px;
   }
 

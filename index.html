@@ -27,7 +27,7 @@
           <p class="rating-modal__para">Please let us know how we did with your support request. All feedback is appreciated 
           to help us improve our offering!</p>
         </div>
-        <form class="rating-modal__rating">
+        <form class="rating-modal__rating" method="POST">
           <div class="rating-modal__group">
             <input type="radio" name="rating" value="1" class="rating-modal__radio" id="radio-1"/> 
             <label for="radio-1" class="rating-modal__label">1</label>
@@ -43,7 +43,7 @@
           <button type="submit" class="rating-modal__btn">Submit</button>
         </form>
       <section>
-      <section class="rating-modal__thanks" id="display-none">
+      <section class="rating-modal__thanks" hidden>
         <img src="./images/illustration-thank-you.svg" alt="thank you message">
         <p class="rating-modal__result">You selected <span class="rating"></span> out of 5</p>
         <h1 class="rating-modal__header">Thank you!</h1>

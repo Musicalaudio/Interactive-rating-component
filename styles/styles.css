@@ -37,15 +37,15 @@ h1{
   color: var(--neutral-white);
 }
 
-.rating-modal > *{
+.rating-modal{
+  display: grid;
+  padding-block: 1.8rem 1.8rem;
+  padding-inline: 1.4rem;
   background-color: var(--neutral-dark-blue);
   border-radius: 20px;
-  padding-inline: 1.4rem;
-  display: grid;
 }
 
 .rating-modal__default{
-  padding-block: 1.5rem;
   display: grid;
   gap: 1.4rem;
 }
@@ -54,7 +54,7 @@ h1{
   background-color: var(--neutral-rating-dark-blue);
   aspect-ratio: 1;
   padding: .8rem;
-  margin-bottom: 1rem;  /*bad practice?*/
+  margin-bottom: 1.2rem;  /* bad practice? */
   border-radius: 50%;
 }
 
@@ -115,7 +115,6 @@ h1{
 
 .rating-modal__thanks{
   text-align: center;
-  padding-block: 2rem;
   display: none;
 }
 
@@ -135,6 +134,7 @@ h1{
 .rating-modal__para{
   color: var(--neutral-light-grey);
   max-width: 33ch;
+  padding-bottom: .5rem;
 }
 
 /* attribution from given template */
@@ -144,15 +144,11 @@ h1{
 
 @media (min-width: 700px){
   .rating-modal{
-    padding-inline: 2rem;
+    /* padding-inline: 2rem; */
     border-radius: 30px;
   }
 
   .rating-modal__para{
     max-width: 35ch;
-  }
-
-  .rating-modal__thanks{
-    padding-block: 2.75rem;
   }
 }

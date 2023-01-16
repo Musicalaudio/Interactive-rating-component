@@ -10,8 +10,8 @@ document.querySelector(".rating-modal__rating").addEventListener("click", (e)=>{
     console.log(rating.innerText)
     e.preventDefault();
     if(rating.innerText){
-      document.querySelector(".rating-modal__default").setAttribute("hidden", "true")
-      document.querySelector(".rating-modal__thanks").removeAttribute("hidden")
+      document.querySelector(".rating-modal__default").style.display = "none";
+      document.querySelector(".rating-modal__thanks").style.display = "grid";
     }
   }
 })

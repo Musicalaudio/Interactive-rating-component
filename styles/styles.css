@@ -11,6 +11,9 @@
   /* font weights */
   --fw-regular: 400;
   --fw-bold: 700;
+
+  /* transitions */
+  --clr-transitions: background-color 300ms ease-out, color 300ms ease-out;
 }
 
 body{
@@ -19,23 +22,99 @@ body{
   grid-template-rows: 1fr auto;
   font-family: 'Overpass', sans-serif;
   background-color: var(--neutral-very-dark-blue);
-  color: var(--neutral-white);
+  color: var(--neutral-light-grey);
 }
 
 main{
   display: grid;
+  gap: 1rem; /*temp*/
   place-content: center;
   font-size: 0.9375rem;
 } 
 
 h1{
   margin-bottom: .5rem;
+  color: var(--neutral-white);
 }
 
-.rating-modal{
+#display-none{
+  display: none;
+}
+
+.rating-modal > *{
   background-color: var(--neutral-dark-blue);
   border-radius: 20px;
-  padding-inline: 1rem;
+  padding-inline: 1.4rem;
+  display: grid;
+}
+
+.rating-modal__default{
+  padding-block: 1.5rem;
+  display: grid;
+  gap: 1.4rem;
+}
+
+.star-icon{
+  background-color: var(--neutral-rating-dark-blue);
+  aspect-ratio: 1;
+  padding: .8rem;
+  margin-bottom: 1rem;  /*bad practice?*/
+  border-radius: 50%;
+}
+
+.rating-modal__rating{
+  text-align: center;
+}
+
+
+.rating-modal__group{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.35rem;
+  border: none;
+  margin-block-end: 1.4rem;
+}
+
+.rating-modal__radio{
+  display: none;
+}
+
+
+.rating-modal__label{
+  border-radius: 50%;
+  aspect-ratio: 1;
+  background-color: var(--neutral-rating-dark-blue);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: var(--clr-transitions);
+}
+
+.rating-modal__radio:checked + .rating-modal__label{
+  background-color: var(--neutral-light-grey);
+  color: var(--neutral-white);
+}
+
+.rating-modal__label:hover, .rating-modal__radio:checked + .rating-modal__label:hover{
+  background-color: var(--primary-orange);
+  color: var(--neutral-white);
+}
+
+.rating-modal button{
+  border-radius: 30px;
+  width: 100%;
+  padding-block: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  font-weight: var(--fw-bold);
+  color: var(--neutral-white);
+  background-color: var(--primary-orange);
+  cursor: pointer;
+  transition: var(--clr-transitions);
+}
+
+.rating-modal button:hover{
+  background-color: var(--neutral-white);
+  color: var(--primary-orange);
 }
 
 .rating-modal__thanks{
@@ -43,13 +122,17 @@ h1{
   padding-block: 2rem;
 }
 
-.rating-modal__rating{
+.rating-modal__thanks img{
+  justify-self: center;
+}
+
+.rating-modal__result{
   background-color: var(--neutral-rating-dark-blue);
   color: var(--primary-orange);
   max-width: fit-content;
   padding: .35rem 1.2rem;
   border-radius: 25px;
-  margin: 1.5rem auto;
+  margin: 1.4rem auto;
 }
 
 .rating-modal__para{
